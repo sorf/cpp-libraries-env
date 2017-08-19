@@ -1,4 +1,4 @@
-# Scripts to set up a C++ with Boost environment
+# Scripts to set up multiple C++ with Boost environments
 
 The environment for a flavor of platform/compiler version is set up for both building and using the
 supported libraries.
@@ -41,4 +41,3 @@ To use the scripts:
             -rw-r--r-- 1 sorin users   779158 Aug 12 13:44 libboost_chrono.a
             ...
 - compile and run a test program
-

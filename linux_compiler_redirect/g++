@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -n "$GXX_COMMAND" ]
+then
+    $GXX_COMMAND $@
+else
+    echo Missing GXX_COMMAND
+    exit 1
+fi
+

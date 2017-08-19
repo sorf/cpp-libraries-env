@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -n "$CLANGXX_COMMAND" ]
+then
+    $CLANGXX_COMMAND $@
+else
+    echo Missing CLANGXX_COMMAND
+    exit 1
+fi
+

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -n "$GCC_COMMAND" ]
+then
+    $GCC_COMMAND $@
+else
+    echo Missing GCC_COMMAND
+    exit 1
+fi
+
