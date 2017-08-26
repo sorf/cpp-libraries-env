@@ -21,9 +21,10 @@ To use the scripts:
     Note:
         - Patch files should be placed in <SOURCE_BASE_FOLDER>/<boost_version>_patches.
             The should follow the structure of github patches, see for example: 
-            https://github.com/boostorg/config/commit/8c9e237f2666e6e89f82d1a0d378  f86355c62668.patch
+            https://github.com/boostorg/config/commit/8c9e237f2666e6e89f82d1a0d378.patch
         - On Windows the Bash shell for Windows or Cygwin needs to be installed to run the 
             unpack and patch script. See the BASH_CMD variable in unpack_patch.bat
+        .    
     e.g.
         Windows:   ...\env> unpack_patch.bat.bat
         Linux:     [gcc_7-debug].../env>sh unpack_patch.bat.sh
