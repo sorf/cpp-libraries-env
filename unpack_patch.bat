@@ -1,27 +1,30 @@
 @echo off
 
+set OLD_PATH=%PATH%
+rem Uncomment/update this to use Cygwin instead of Bash on Windows
+rem set PATH=d:\local\cygwin\bin\;%PATH%
 set BASH_CMD=bash
 set script_file=unpack_patch.bat
 
 if "%SOURCE_BASE_FOLDER%"=="" (
     echo %script_file%: SOURCE_BASE_FOLDER not set
-    exit /b 1
+    goto exit_abort
 )
 if "%TMP_BASE_FOLDER%"=="" (
     echo %script_file%: TMP_BASE_FOLDER not set
-    exit /b 1
+    goto exit_abort
 )
 if "%BOOST_VERSION%"=="" (
     echo %script_file%: BOOST_VERSION not set
-    exit /b 1
+    goto exit_abort
 )
 if "%BZIP2_VERSION%"=="" (
     echo %script_file%: BZIP2_VERSION not set
-    exit /b 1
+    goto exit_abort
 )
 if "%ZLIB_VERSION%"=="" (
     echo %script_file%: ZLIB_VERSION not set
-    exit /b 1
+    goto exit_abort
 )
 
 
@@ -54,9 +57,14 @@ rem Running unpack_patch from the TMP folder
 set bash_result=%ERRORLEVEL%
 cd %current_folder%
 
-
 if %bash_result% NEQ 0 (
     echo %script_file%: unpack_patch.sh failed ^(code: %bash_result%^)
 )
+
+set PATH=%OLD_PATH%
 exit /b %bash_result%
+
+:exit_abort
+set PATH=%OLD_PATH%
+exit /b 1
 
