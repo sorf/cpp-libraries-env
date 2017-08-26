@@ -50,8 +50,7 @@ set with_libraries=^
  --with-container^
  --with-context^
  --with-coroutine^
- --with-coroutine2^
- --with-fiber^
+  --with-fiber^
  --with-iostreams^
  --with-program_options^
  --with-test^
