@@ -18,16 +18,19 @@ To use the scripts:
         Linux:      .../env> sh gcc_7_debug.sh
     On Linux, the script will update the command prompt; use 'exit' to exist the environment
 - unpack the libraries (Boost, bzip2, zlib) and patch them (see unpack_patch.sh)
+    
     Note:
-        - Patch files should be placed in <SOURCE_BASE_FOLDER>/<boost_version>_patches.
+    - Patch files should be placed in <SOURCE_BASE_FOLDER>/<boost_version>_patches.
             The should follow the structure of github patches, see for example: 
             https://github.com/boostorg/config/commit/8c9e237f2666e6e89f82d1a0d378.patch
-        - On Windows the Bash shell for Windows or Cygwin needs to be installed to run the 
+    - On Windows the Bash shell for Windows or Cygwin needs to be installed to run the 
             unpack and patch script. See the BASH_CMD variable in unpack_patch.bat
-        .    
+    .
+
     e.g.
-        Windows:   ...\env> unpack_patch.bat.bat
-        Linux:     [gcc_7-debug].../env>sh unpack_patch.bat.sh
+    
+            Windows:   ...\env> unpack_patch.bat.bat
+            Linux:     [gcc_7-debug].../env>sh unpack_patch.bat.sh
 
 - build the Boost collection of libraries (see build_boost.bat/.sh for customizing it)
     e.g.
