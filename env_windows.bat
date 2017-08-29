@@ -23,6 +23,7 @@ if "%4"=="32" (
 rem Base settings.
 rem Note: Spaces in folder names do not currently work with build_boost.sh
 set BASE_FOLDER=d:\local
+set BIN_BASE_FOLDER=%BASE_FOLDER%\bin
 set SOURCE_BASE_FOLDER=%BASE_FOLDER%\src
 set TMP_BASE_FOLDER=%BASE_FOLDER%\tmp
 
@@ -50,6 +51,9 @@ echo BOOST_INCLUDE_FOLDER="%BOOST_INCLUDE_FOLDER%"
 echo BOOST_LIB_FOLDER="%BOOST_LIB_FOLDER%"
 echo BOOST_TOOLSET="%BOOST_TOOLSET%"
 echo ADDRESS_MODEL="%ADDRESS_MODEL%"
+
+rem path
+SET PATH=%BIN_BASE_FOLDER%;%PATH%
 
 rem msvc paths
 set INCLUDE=%BOOST_INCLUDE_FOLDER%;%INCLUDE%
