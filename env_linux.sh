@@ -24,6 +24,7 @@ export ADDRESS_MODEL
 # Base settings
 # Note: Spaces in folder names do not currently work with build_boost.sh
 export BASE_FOLDER=~/local
+export BIN_BASE_FOLDER="${BASE_FOLDER}/bin"
 export SOURCE_BASE_FOLDER="${BASE_FOLDER}/src"
 export TMP_BASE_FOLDER="${BASE_FOLDER}/tmp"
 
@@ -50,6 +51,9 @@ echo BOOST_INCLUDE_FOLDER="${BOOST_INCLUDE_FOLDER}"
 echo BOOST_LIB_FOLDER="${BOOST_LIB_FOLDER}"
 echo BOOST_TOOLSET="${BOOST_TOOLSET}"
 echo ADDRESS_MODEL="${ADDRESS_MODEL}"
+
+# Path to bin folder
+export PATH="$BIN_BASE_FOLDER:$PATH"
 
 # gcc-style include and lib paths  (so they come before the system ones)
 export GCC_INCLUDE_PATHS=-isystem${BOOST_INCLUDE_FOLDER}

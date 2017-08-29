@@ -5,7 +5,7 @@ set current_folder=%CD%
 set script_dir=%~dp0
 
 rem Uncomment/update this to use Cygwin instead of Bash on Windows
-set PATH=d:\local\cygwin\bin\;%PATH%
+rem set PATH=d:\local\cygwin\bin\;%PATH%
 set BASH_CMD=bash
 set script_file=unpack_patch.bat
 
@@ -81,7 +81,7 @@ if %bash_result% NEQ 0 (
 
 if exist %BIN_BASE_FOLDER%\b2.exe (
     if exist %BIN_BASE_FOLDER%\bjam.exe (
-        echo %script_file%: Skipping Boost.bootstrap
+        echo %script_file%: Skipping already run Boost.bootstrap
         goto exit_success
     )
 )
@@ -102,6 +102,7 @@ copy bjam.exe %BIN_BASE_FOLDER%\bjam.exe || goto exit_abort
 :exit_success
 set PATH=%OLD_PATH%
 cd %current_folder%
+echo %script_file%: successful
 exit /b 0
 
 :exit_abort

@@ -126,9 +126,15 @@ echo "${script_file}: Boost is ready in: \"${boost_source_folder}\""
 
 # Running Boost bootstrap.bat if not told not to do so
 if [ "$skip_boost_bootstrap" != "0" ]; then
-    echo "${script_file}: Skipping  Boost.bootstrap"
+    echo "${script_file}: Skipping Boost.bootstrap"
+elif [ -f "$BIN_BASE_FOLDER/b2" -a -f "$BIN_BASE_FOLDER/bjam" ]; then
+    echo "${script_file}: Skipping already run Boost.bootstrap"
 else
     echo "${script_file}: Running Boost.bootstrap.."
+    cd $BOOST_SOURCE_FOLDER/tools/build && sh bootstrap.sh && cd -
+    mkdir -p "$BIN_BASE_FOLDER"
+    cp "$BOOST_SOURCE_FOLDER/tools/build/b2" "$BIN_BASE_FOLDER/b2"
+    cp "$BOOST_SOURCE_FOLDER/tools/build/bjam" "$BIN_BASE_FOLDER/bjam"
 fi
 
 # Copying bzip2 to the destination folder
@@ -152,3 +158,5 @@ fi
 echo "${script_file}: zlib is ready in: \"${zlib_source_folder}\""
 
 
+# All done
+echo ${script_file}: successful
