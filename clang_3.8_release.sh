@@ -2,7 +2,7 @@
 
 # __STRICT_ANSI__ defined to workaround the float128 compilation error when using libstdc++.
 # see https://stackoverflow.com/questions/13525774/clang-and-float128-bug-error
-export CLANGXX_COMMAND="/usr/bin/clang++ -D__STRICT_ANSI__"
+export CLANGXX_COMMAND="/usr/bin/clang++ -D__STRICT_ANSI__ -std=c++14"
 export CLANG_COMMAND="/usr/bin/clang-3.8 -D__STRICT_ANSI__"
 # We need gcc as well for Boost.Build.
 export GCC_COMMAND="/usr/bin/gcc"
