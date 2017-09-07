@@ -158,5 +158,23 @@ fi
 echo "${script_file}: zlib is ready in: \"${zlib_source_folder}\""
 
 
+# Optional: Unpacking beast_develop and copying it over boost.
+beast_develop_base_folder=beast-develop
+beast_develop_zip="${SOURCE_BASE_FOLDER}/${beast_develop_base_folder}.zip"
+if [ -f "$beast_develop_zip" ]; then
+    if [ ! -f "${boost_source_folder}/_beast_develop_ready_" ]; then
+        echo "${script_file}: Unpacking $beast_develop_zip"
+        rm -rf ../unpack_patch/beast-develop
+        unzip -q "$beast_develop_zip"
+        echo "${script_file}: Copying unpacked $beast_develop_zip to destination..."
+        rm -rf ${boost_source_folder}/boost/beast.hpp
+        rm -rf ${boost_source_folder}/boost/beast
+        cp -r ./${beast_develop_base_folder}/include/boost/beast.hpp ${boost_source_folder}/boost/
+        cp -r ./${beast_develop_base_folder}/include/boost/beast ${boost_source_folder}/boost/
+        touch ${boost_source_folder}/_beast_develop_ready_
+    fi
+    echo "${script_file}: beast_develop is ready in: \"${boost_source_folder}\""
+fi
+
 # All done
 echo ${script_file}: successful
