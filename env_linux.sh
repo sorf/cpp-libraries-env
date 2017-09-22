@@ -29,7 +29,7 @@ export SOURCE_BASE_FOLDER="${BASE_FOLDER}/src"
 export TMP_BASE_FOLDER="${BASE_FOLDER}/tmp"
 
 # Boost settings
-export BOOST_VERSION=1_65_0
+export BOOST_VERSION=1_65_1
 export BZIP2_VERSION=1.0.6
 export ZLIB_VERSION=1.2.11
 
