@@ -15,7 +15,7 @@ To use the scripts:
     e.g.
     
         Windows:   ...\env> msvc_14.1_debug_64.cmd
-        Linux:      .../env> sh gcc_7_debug.sh
+        Linux:      .../env> bash gcc_7_debug.sh
     On Linux, the script will update the command prompt; use 'exit' to exist the environment
 - unpack the libraries (Boost, bzip2, zlib), patch them and build Boost.Build (see unpack_patch.sh)
     
