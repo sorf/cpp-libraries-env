@@ -60,7 +60,7 @@ with_libraries="\
 additional_flags="\
  -sBZIP2_SOURCE="$BZIP2_SOURCE_FOLDER"\
  -sZLIB_SOURCE="$ZLIB_SOURCE_FOLDER"\
- cxxflags="-std=c++14"\
+ cxxflags="-std=c++17"\
 "
 
 b2_command="b2\

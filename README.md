@@ -29,8 +29,8 @@ To use the scripts:
 
     e.g.
     
-            Windows:   ...\env> unpack_patch.bat.bat
-            Linux:     [gcc_7-debug].../env>sh unpack_patch.bat.sh
+            Windows:   ...\env> unpack_patch.bat
+            Linux:     [gcc_7-debug].../env>sh unpack_patch.sh
 
 - build the Boost collection of libraries (see build_boost.bat/.sh for customizing it)
     e.g.
