@@ -63,7 +63,7 @@ additional_flags="\
  cxxflags="-std=c++17"\
 "
 
-b2_command="b2\
+b2_command="b2 -d2\
  --build-dir="$BOOST_TMP_FOLDER"\
  --includedir="$BOOST_INCLUDE_FOLDER"\
  --libdir="$BOOST_LIB_FOLDER"\

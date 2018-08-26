@@ -60,8 +60,13 @@ set with_libraries=^
 set additional_flags=^
  -sBZIP2_SOURCE="%BZIP2_SOURCE_FOLDER%"^
  -sZLIB_SOURCE="%ZLIB_SOURCE_FOLDER%"
-
-set b2_command=b2^
+if "%BOOST_TOOLSET%"=="msvc" ( 
+    set additional_flags=%additional_flags% cxxflags="/std:c++17"
+)
+if "%BOOST_TOOLSET%"=="gcc" ( 
+    set additional_flags=%additional_flags% cxxflags="-std=c++17"
+)
+set b2_command=b2 -d2^
  --build-dir="%BOOST_TMP_FOLDER%"^
  --includedir="%BOOST_INCLUDE_FOLDER%"^
  --libdir="%BOOST_LIB_FOLDER%"^
